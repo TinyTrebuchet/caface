@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser.add_argument("--device", type=str, default='cuda:0')
     parser.add_argument("--fusion_method", type=str,
                         default='cluster_and_aggregate',
-                        choices=['cluster_and_aggregate, average'])
+                        choices=['cluster_and_aggregate', 'average'])
 
     args = parser.parse_args()
 

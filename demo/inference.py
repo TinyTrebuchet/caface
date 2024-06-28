@@ -1,5 +1,4 @@
 import torch
-from tqdm import tqdm
 import numpy as np
 
 
@@ -10,7 +9,7 @@ def infer_features(dataloader, model, aggregator, hyper_param, device='cuda:0'):
     intermediates = []
     prev_max_idx = 0
     with torch.no_grad():
-        for iter_idx, (img, idx) in tqdm(enumerate(dataloader), total=len(dataloader)):
+        for iter_idx, (img, idx) in enumerate(dataloader):
             assert idx.max().item() >= prev_max_idx
             prev_max_idx = idx.max().item()  # order shifting by dataloader checking
 
